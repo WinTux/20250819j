@@ -30,7 +30,7 @@ jobs:
         run: mvn clean verify
 
       - name: Run static code analysis (optional)
-        run: mvn sonar:sonar -Dsonar.projectKey=WinTux_20250819j -Dsonar.organization=WinTux -Dsonar.host.url=https://sonarcloud.io
+        run: mvn sonar:sonar -Dsonar.projectKey=WinTux_20250819j -Dsonar.organization=wintux-1 -Dsonar.host.url=https://sonarcloud.io
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
