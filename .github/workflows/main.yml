@@ -38,3 +38,12 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
+      - name: Upload JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: springboot-app
+          path: target/*.jar
+      - name: Download JAR
+        uses: actions/download-artifact@v3
+        with:
+          name: springboot-app
