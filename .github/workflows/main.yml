@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    uses: ./.github/workflows/build-test-reusable.yml
+    uses: ./.github/workflows/reutilizable-build.yml
     with:
       java-version: ’25’
   build-and-test:
