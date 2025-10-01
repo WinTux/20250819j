@@ -9,7 +9,7 @@ jobs:
   test:
     uses: ./.github/workflows/reutilizable-build.yml
     with:
-      java-version: ’25’
+      java-version: '25'
   build-and-test:
     runs-on: ubuntu-latest
 
