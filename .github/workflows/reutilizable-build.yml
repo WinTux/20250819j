@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: ${{ inputs.java-version }}
-          distribution: ‘temurin’
+          distribution: 'temurin'
 
       - name: Cache paquetes Maven
         uses: actions/cache@v4
