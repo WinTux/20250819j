@@ -48,8 +48,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: v1.0.0
-        release_name: "Release v1.0.0"
+        tag_name: v1.1.0
+        release_name: "Release v1.1.0"
         draft: false
         prerelease: false
     - name: Subir producto-service como asset
@@ -59,7 +59,7 @@ jobs:
       run: |
         for archivo in ./jars/*.jar; do
           echo "Subiendo $archivo"
-          gh release upload v1.0.0 "$archivo" --clobber
+          gh release upload v1.1.0 "$archivo" --clobber
         done
 #      with:
 #        upload_url: ${{ steps.create_release.outputs.upload_url }}
