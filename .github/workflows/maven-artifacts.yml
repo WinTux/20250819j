@@ -53,11 +53,16 @@ jobs:
         draft: false
         prerelease: false
     - name: Subir producto-service como asset
-      uses: actions/upload-release-asset@v1
+#      uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./producto-service/target/producto-service-0.0.1-SNAPSHOT.jar
-        asset_name: producto-service.jar
-        asset_content_type: application/java-archive
+      run: |
+        for archivo in ./jars/*.jar; do
+          echo "Subiendo $archivo"
+          gh release upload v1.0.0 "$archivo" --clobber
+        done
+#      with:
+#        upload_url: ${{ steps.create_release.outputs.upload_url }}
+#        asset_path: ./producto-service/target/producto-service-0.0.1-SNAPSHOT.jar
+#        asset_name: producto-service.jar
+#        asset_content_type: application/java-archive
